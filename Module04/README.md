@@ -84,6 +84,8 @@ For a comparison between Python and Java, dictionaries are like maps, lists are 
 ### 👉🏽 Discussion
 Thinking back to your 5001 class, what were some cases to use a List or Dictionary in Python? The Collections framework is a bit more detailed in giving you more control of the underlying data structure, but the fundamentals are similar. 
 
+##### Response
+Dictionaries and lists are used in python to store data. Similarly, in Java these and additional data structures could be used to hold and manipulate objects.
 
 <!-- Links -->
 [Java Core Libraries]: https://docs.oracle.com/en/java/javase/21/core/java-core-libraries1.html
@@ -110,7 +112,9 @@ two major concepts.
 
 Take a look at ListRunner.java.  👉🏽 DISCUSS and define as a group what the following two methods do
 * runAddToFrontTest(List<Integer> list)
+  * Times how long it takes to add 1 million integers to the front of a list
 * accessNthElement(List<Integer> list, int n)
+  * Times how long it takes to get the nth element in a list 1 million times consecutively
 
 ### :fire: Task 1: Run ListRunner.java
 
@@ -124,6 +128,7 @@ java ListRunner
 This run may take over a minute or so, so give it time. 
 
 👉🏽 DISCUSS the results! 
+    ListRunner demonstrates that it is very fast to add elements to a linked list, very slow to access, and vice versa for an array
 
 A powerful concept is that if your entire program uses List, you often only have one spot to change the class, and a simple change between ArrayList and LinkedList can make a big difference depending on what you are trying to do. 
 
@@ -181,6 +186,8 @@ public class YourClassName {
 ```
 
 Try the above code. 👉🏽 DISCUSS the results!
+The above code is fast and a lot more concise than the example that filters manually.
+
 
 In english, what the code is saying is:
 1. Take the list of numbers as a stream
@@ -292,12 +299,16 @@ System.out.println(sorted);
 
 The above code will sort the list of integers. However, as a group discuss what would happen if you tried to sort a list of Book objects. 
 
+If you tried to sort a list of book objects, if a Book doesn't implement comparable or have a compareTo method, there would be nothing to sort on. As it is written currently the books will be sorted by title.
+
 :fire: Task - Go ahead and write code that sorts the books. Since comparable is implemented, you can use code similar to the above to sort the books. You do not have to write your own sort.
 
 
 ## 👉🏽  Discussion
 
 Take a moment to discuss the various methods you wrote verse the stream functionality. What are the advantages and disadvantages of each? Can you think of other ways to test / apply the functionality. For example, maybe write a filter (see the first example) that filters the books that were published after 1950. Or write a filter that only takes odd numbers, but then adds (reduce) those odd numbers together. This last one combines the various methods you have learned so far, and you can 'chain' them together. We encourage you to work as a team to figure it out. 
+
+Streams are emblematic of a functional programming paradigm, but it seems like they can still be implemented in an Object Oriented way to write cleaner, more concise code. I wrote several class methods that could take have as many lines of code using Streams.
 
 Do you have to be an expert in Streams? No, not at all! But it does help to know what to look for to better understand the tools you have for the situation!
 

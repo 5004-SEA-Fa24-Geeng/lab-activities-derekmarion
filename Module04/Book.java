@@ -1,3 +1,8 @@
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 class Book implements Comparable<Book> {
     private String title;
     private String author;
@@ -44,6 +49,19 @@ class Book implements Comparable<Book> {
     @Override
     public int compareTo(Book other) {
         return this.getTitle().compareTo(other.getTitle());
+    }
+
+    public List<Book> generateBooks(List<String> bookStrings) {
+        List<Book> books = new ArrayList<>();
+        for (String bookString : bookStrings) {
+            books.add(createFromString(bookString));
+        }
+        return books;
+    }
+
+    public List<Book> sortbooks(List<Book> books) {
+        Collections.sort(books);
+        return books;
     }
 
 }
