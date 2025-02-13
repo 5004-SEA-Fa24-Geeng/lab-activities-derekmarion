@@ -1,4 +1,8 @@
-/** feel free to use this template as a starting point. */
+import java.util.Objects;
+
+/**
+ * feel free to use this template as a starting point.
+ */
 
 public class Student extends Person {
     private int id;
@@ -15,6 +19,21 @@ public class Student extends Person {
     @Override
     public String toString() {
         return "StudentSolution{" + "name='" + this.getName() + '\'' + ", id=" + this.getId() + '}';
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true; // Check for reference equality
+        if (other == null || getClass() != other.getClass()) return false; // Not equal if not the same class or null
+
+        Student other_student = (Student) other; // Typecast before comparing
+
+        return getId() == other_student.getId() && Objects.equals(this.getName(), other_student.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName());
     }
 
     public static void main(String[] args) {

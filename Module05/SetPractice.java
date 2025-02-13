@@ -25,8 +25,17 @@ public class SetPractice {
         // TODO: add Set<Person>, and see
         // how it behaves with both students and person.
         // Make sure to have a duplicate student or person
+        Set<Person> people = new HashSet<>();
+        people.add(new Student("Alice", 1));
+        people.add(new Student("Bob", 2));
+        people.add(new Student("Jim", 3));
 
+        System.out.println(people);
 
+        people.add(new Person("Alice"));
+        people.add(new Student("Alice", 1));
+
+        System.out.println(people);
 
     }
 

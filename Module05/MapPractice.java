@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,7 +17,9 @@ public class MapPractice {
         System.out.println(map);
 
         // what happens if we add a duplicate key?
-        // your code here
+        map.put("Apple", 5.0);
+        System.out.println(map);
+        // Key is overwritten with new value
 
 
         // now try it with Person/Student. We will
@@ -28,6 +31,10 @@ public class MapPractice {
         // you will find Set.of() useful here
         // for example:
         // classes.put(p2, Set.of("CS5001", "CS5002"));
+        Person person1 = new Person("John");
+        Person person2 = new Person("Jane");
+        classes.put(person1, Set.of("Apple", "Banana"));
+        classes.put(person2, Set.of("Cherry", "Banana"));
 
     }
 
